@@ -67,8 +67,12 @@ WSGI_APPLICATION = "ecommerce_project.wsgi.application"
 # Database – default is SQLite (for Render PostgreSQL, this should be updated)
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "djongo",
+        "NAME": "ecommercedb", 
+        "ENFORCE_SCHEMA": False, 
+        "CLIENT": {
+            "host": "mongodb://localhost:27017",  
+        }
     }
 }
 
